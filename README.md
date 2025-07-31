@@ -159,4 +159,4 @@ Cuando hayas terminado de trabajar, puedes detener y eliminar todos los contened
   
   docker compose down -v #Detiene y elimina contenedores y los volumenes borrando toda la informacion de la base de datos y de los logs
 
-¡Eso es todo! Ahora tienes una aplicación funcional con capacidades de monitoreo de clase mundial. ¡Experimenta y sigue aprendiendo!
+¡Eso es todo! Ahora tienes una aplicación funcional con capacidades de monitoreo de clase mundial. KeepCoding Rules!
