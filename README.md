@@ -40,10 +40,11 @@ Sigue estos pasos cuidadosamente para poner todo en marcha.
 
 Si todavía no tienes el código, clónalo desde GitHub:
 
+```
   git clone https://github.com/KeepCodingCloudDevops12/guestbook
   
   cd guestbook
-
+```
 🔒 Variables de Entorno (.env)
 
 Por razones de seguridad, el archivo .env que contiene credenciales sensibles no se comparte en este repositorio. Lo recibirás por separado y de forma privada (por ejemplo, a través de un gestor de contraseñas seguro o un canal cifrado).
@@ -56,16 +57,20 @@ Crear y cargar el archivo .env
 
 3. Navega hasta la carpeta raíz del proyecto guestbook:
 
-  cd \guestbook # Ajusta esta ruta a la de tu proyecto. La ruta escrita es un ejemplo
-
+```
+  cd guestbook/ # Ajusta esta ruta a la de tu proyecto. La ruta escrita es un ejemplo
+```
 
 2. Limpiar la Caché de Docker (¡Muy Importante!)
 Para evitar problemas de construcción de imágenes, es una buena práctica limpiar la caché de Docker.
 
+```
 docker builder prune -f
-#Si el problema persiste, puedes usar un comando más agresivo (borra todo lo no usado):
-
-#docker system prune --all --volumes -f
+```
+Si el problema persiste, puedes usar un comando más agresivo (borra todo lo no usado):
+```
+docker system prune --all --volumes -f
+```
 
 3.  Construir y Levantar Todos los Servicios
 
@@ -73,10 +78,11 @@ Este comando construirá las imágenes necesarias (incluida tu aplicación Node.
 
 Asegúrate de haber cargado tus variables de entorno en la terminal antes de ejecutar esto.
 
+```
   docker compose down -v # Opcional, para limpiar cualquier ejecución previa
   
   docker compose up --build -d
-
+```
   #docker compose down -v: Detiene y elimina todos los contenedores, redes y volúmenes (-v) asociados al proyecto. Es útil para empezar desde un estado limpio.
 
   #docker compose up --build -d:
@@ -90,26 +96,31 @@ Una vez que el comando anterior haya finalizado, puedes empezar a probar tu setu
 
 1. Verificar el Estado de los Contenedores
 Asegúrate de que todos los servicios estén corriendo y en buen estado:
-  docker compose ps
-
+```
+docker compose ps
+```
 Deberías ver todos los servicios (app, db, prometheus, loki, promtail, grafana) con un estado running y eventualmente (healthy).
 
 2. Probar la Aplicación Web (Guestbook)
-  Abre tu navegador y visita: http://localhost:3000
-
+```
+Abre tu navegador y visita: http://localhost:3000
+```
 Interactúa con la aplicación (por ejemplo, añade algunas entradas) para asegurarte de que la base de datos funciona.
 
 3. Acceder a Grafana para Observabilidad (¡Lo Bueno!)
 Grafana es tu panel de control central para métricas y logs.
 
-  Abre tu navegador y ve a: http://localhost:3001
-
+  Abre tu navegador y ve a:
+```
+  http://localhost:3001
+```
   Inicia sesión:
-
+```
   Usuario: admin
-
-  Contraseña: password (Se te pedirá cambiarla en el primer inicio de sesión. ¡Hazlo!)
-
+```
+```
+  Contraseña: password 
+```
 Añadir Fuentes de Datos (Si no lo hiciste antes):
 
   En el menú lateral de Grafana, ve a Connections (o el icono de la rueda dentada en versiones antiguas) -> Data sources.
@@ -120,7 +131,10 @@ Añadir Fuentes de Datos (Si no lo hiciste antes):
 
    Selecciona Prometheus.
 
-   En URL, introduce: http://prometheus:9090
+   En URL, introduce:
+   ``` 
+   http://prometheus:9090
+ ```
 
    Haz clic en Save & test. Deberías ver un mensaje de éxito.
 
@@ -128,7 +142,11 @@ Añadir Fuentes de Datos (Si no lo hiciste antes):
 
    Selecciona Loki.
 
-   En URL, introduce: http://loki:3100
+   En URL, introduce:
+   
+   ```
+   http://loki:3100
+```
 
    Haz clic en Save & test. Deberías ver un mensaje de éxito.
 
@@ -154,9 +172,10 @@ Añadir Fuentes de Datos (Si no lo hiciste antes):
 
 🛑 Detener y Limpiar el Proyecto
 Cuando hayas terminado de trabajar, puedes detener y eliminar todos los contenedores, redes y volúmenes asociados a este proyecto para liberar recursos:
-
+```
   docker compose down #Detiene y elimina los contenedores sin eliminar los volumenes manteniendo la informacion salvada previamente en la base de datos y los logs 
-  
+```
+```  
   docker compose down -v #Detiene y elimina contenedores y los volumenes borrando toda la informacion de la base de datos y de los logs
-
+```
 ¡Eso es todo! Ahora tienes una aplicación funcional con capacidades de monitoreo de clase mundial. KeepCoding Rules!
