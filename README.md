@@ -1,5 +1,8 @@
 🚀 Guestbook App con Observabilidad (Node.js, MySQL, Prometheus, Loki, Grafana)
-¡Bienvenido al proyecto Guestbook! Esta guía te ayudará a levantar una aplicación de ejemplo con Node.js y MySQL, y lo más importante, ¡un stack de observabilidad completo! Esto te permitirá monitorear métricas y logs en tiempo real usando Prometheus, Loki y Grafana.
+
+¡Bienvenido al proyecto Guestbook! Este proyecto es un contador que registra las visitas a una página web en este caso montada en localhost y tambien tiene la posibilidad de guardar tu correo para firmar el libro de vistas con la fecha y hora de tu ultima visita!!!
+
+Esta guía te ayudará a levantar una aplicación de ejemplo con Node.js y MySQL, y lo más importante, ¡un stack de observabilidad completo! Esto te permitirá monitorear métricas y logs en tiempo real usando Prometheus, Loki y Grafana.
 
 📋 Prerrequisitos
 Antes de empezar, asegúrate de tener lo siguiente instalado en tu sistema:
