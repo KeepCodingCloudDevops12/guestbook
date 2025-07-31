@@ -14,6 +14,7 @@ Un editor de código: Como Visual Studio Code.
 
 Este proyecto está organizado de la siguiente manera:
 
+```
 guestbook/
 ├── app/
 │   ├── index.js             # ¡Aquí debe estar SIEMPRE!
@@ -29,7 +30,7 @@ guestbook/
 │   └── config.yml
 ├── .env                     # Tu archivo .env (privado)
 └── docker-compose.yml       # El archivo principal
-
+```
 
 🚀 Levantando el Proyecto Parte 1
 
